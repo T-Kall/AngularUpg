@@ -1,0 +1,23 @@
+<div>
+
+    <div class="mb-4">
+        <app-cart-item></app-cart-item>
+    </div>
+
+    <div class="p-2 align-items-center">
+        <div class="ml-2 d-flex">
+
+            <div>
+                Totalt: <span class="ml-1">totalCartAmount SEK</span><br />
+                <small class="text-muted">inkl. moms</small>
+            </div>
+            <div class="ml-3">Antal: totalCartQuantity  st</div>
+
+        </div>
+        <div class="ml-2">
+            <button (click)="clear()" class="btn btn-danger">Töm kundvagn</button>
+            <button class="btn btn-primary">Gå till kassan</button>
+        </div>
+    </div>
+
+</div>

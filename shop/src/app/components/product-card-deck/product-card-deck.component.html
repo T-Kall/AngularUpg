@@ -1,0 +1,35 @@
+<p>product-card-deck works!</p>
+
+<div class="row row-cols-1 row-cols-md-3 container" style="border: none;">
+
+
+   <div *ngFor="let product of productcatalog | async">
+
+     
+    
+          <div class="col mb-4">
+            <div class="card">
+
+               <div class="view overlay">
+                  <img class="card-img-top" [src]="product.image" [alt]="product.name">
+                  <a  [routerLink]="'/products/' + product._id">
+                     <div class="mask rgba-white-slight"></div>
+                  </a>
+               </div>
+
+               <div class="card-body">
+                  <h4 class="card-title">{{ product.name }}</h4>
+                  <p class="card-text"> {{ product.shortDescription }}</p>
+                  <button class="btn btn-primary btn-md" [routerLink]="'/products/' + product._id">Visa Produkt</button>
+               </div>
+
+            </div>
+         </div> 
+  
+
+
+
+   </div>
+
+
+</div>
