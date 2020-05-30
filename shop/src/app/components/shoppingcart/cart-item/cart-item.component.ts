@@ -4,6 +4,7 @@ import { IShoppingCart } from 'src/app/models/ishoppingcart.model';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 import { Store } from '@ngrx/store';
 import { IState } from 'src/app/models/istate.model';
+//import { Observable, from } from 'rxjs';
 //import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -17,6 +18,8 @@ export class CartItemComponent implements OnInit {
   //   public product: IProduct
   // public shoppingcart: Array<any>
   public shoppingcart: Array<IShoppingCart>
+ //public cart$: Observable<Array<IProduct>>
+  //public products$: Observable<any>
 
   //   public totalCartQuantity: number = 0
   //   public totalCartAmount: number = 0
@@ -40,6 +43,15 @@ export class CartItemComponent implements OnInit {
     this.shoppingCartService.remove(_id)
   }
 
+
+  // RemoveCartItem(id:string) {
+  //   this.store.dispatch(new RemoveCartItemAction(id))  
+  //  }
+
+
+  // RemoveProduct(id: string) {
+  //   this.store.dispatch(remove({id: id}))
+  // }
 
   increment(item) {
     

@@ -54,8 +54,8 @@ export class ShoppingCartService {
     this.totalQuantity(), this.totalAmount()
   }
 
-  remove(id) {
-    this.store.dispatch(new ShoppingCartActions.Remove(id))
+  remove(_id) {
+    this.store.dispatch(new ShoppingCartActions.Remove(_id))
     this.totalQuantity(), this.totalAmount()
   }
 
@@ -75,9 +75,6 @@ export class ShoppingCartService {
   //Minska - om varan större? än = 1 ta bort - skriv ut det nya != null <= 1)
   //Fixar reducern
   decrement(item) {
-    // if (item.quantity !== null) {
-    //   this.remove(item.product._id)
-    // }
     this.store.dispatch(new ShoppingCartActions.Decrement(item))
     this.totalQuantity(), this.totalAmount()
   }

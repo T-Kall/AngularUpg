@@ -55,9 +55,9 @@ export class CartComponent implements OnInit {
   }
 
 
-  remove(id) {
-    this.shoppingCartService.remove(id)
-  }
+  // remove(id) {
+  //   this.shoppingCartService.remove(id)
+  // }
 
 
   totalCartQuantity() {
@@ -69,13 +69,13 @@ export class CartComponent implements OnInit {
     this.shoppingCartService.totalAmount()
   }
 
-  increment(item) {
-    this.shoppingCartService.increment(item)
-  }
+  // increment(item) {
+  //   this.shoppingCartService.increment(item)
+  // }
 
-  decrement(item) {
-    this.shoppingCartService.decrement(item)
-  }
+  // decrement(item) {
+  //   this.shoppingCartService.decrement(item)
+  // }
 
 
 }
