@@ -62,8 +62,3 @@ export const productCatalog: Array<IProduct> = [
         "inStockAmount": 100
     }
 ]
-
-export const users: Array<any> = [
-    { id: '1', firstName: 'Hans', lastName: 'Mattin-Lassei', email: 'hans@ml.com', password: 'BytMig123', role: 'admin' },
-    { id: '2', firstName: 'Anna', lastName: 'Nyman', email: 'anna@nyman.com', password: 'BytMig123', role: 'user' }
-]

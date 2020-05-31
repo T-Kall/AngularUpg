@@ -26,10 +26,10 @@
             <li class="nav-item dropdown">
               <!-- (click)="$event.stopPropagation()" -->
                 <a class="nav-link mr-4" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    50 <i class="fas fa-shopping-cart"></i> 
+                    {{ shoppingcartQuantity }}  <i class="fas fa-shopping-cart"></i> 
                 </a>
                 <div class="dropdown-menu dropdown-menu-right z-depth-2 shopping-cart"  (click)="$event.stopPropagation()">
-                    <h5>Varukorg</h5>
+                
                     <app-cart></app-cart>
                 
                 </div>
@@ -40,7 +40,7 @@
                 <a class="nav-link dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user"></i>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right z-depth-2" (click)="$event.stopPropagation()">
+                <div class="dropdown-menu dropdown-menu-right z-depth-2 pl-2" (click)="$event.stopPropagation()">
                    Usersettings
                 </div>          
             </li> 
@@ -53,19 +53,3 @@
 
 
 
-
-              <!-- <li class="nav-item">
-           <a class="nav-link"  href="/" >Produkter</a>
-          </li>  
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/" >Nyheter</a>
-          </li>
-    
-          <li class="nav-item">
-            <a class="nav-link"  href="/" >Kläder</a>
-          </li>
-    
-          <li class="nav-item">
-            <a class="nav-link"  href="/" >Skor</a>
-          </li> -->

@@ -21,7 +21,8 @@ import { CartComponent } from './components/shoppingcart/cart/cart.component';
 import { CartItemComponent } from './components/shoppingcart/cart-item/cart-item.component';
 import { ShoppingCartQuantityReducer } from './store/reducers/shoppingcart-quantity.reducer';
 import { ShoppingCartAmountReducer } from './store/reducers/shoppingcart-amount.reducer';
-//import { ShoppingCartQAReducer } from './store/reducers/shoppingcart-qa.reducer';
+import { NotfoundViewComponent } from './views/notfound-view/notfound-view.component';
+
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ShoppingCartAmountReducer } from './store/reducers/shoppingcart-amount.
     ProductCardDeckComponent,
     CartComponent,
     CartItemComponent,
+    NotfoundViewComponent,
  
   
   ],
@@ -48,7 +50,7 @@ import { ShoppingCartAmountReducer } from './store/reducers/shoppingcart-amount.
       shoppingcart: ShoppingCartReducer,
       shoppingcartQuantity: ShoppingCartQuantityReducer,
       shoppingcartAmount: ShoppingCartAmountReducer,
-      //shoppingcartQA: ShoppingCartQAReducer
+     
     }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],

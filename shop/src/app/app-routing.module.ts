@@ -5,13 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingpageViewComponent } from './views/landingpage-view/landingpage-view.component';
 import { ProductCatalogViewComponent } from './views/product-catalog-view/product-catalog-view.component';
 import { ProductViewComponent } from './views/product-view/product-view.component';
+import { NotfoundViewComponent } from './views/notfound-view/notfound-view.component'
 
 //Sidor och sökvägar   // Länkar här och på navbar
 const routes: Routes = [
   { path: '', component: LandingpageViewComponent },
   { path: 'features', component: LandingpageViewComponent },
   { path: 'products', component: ProductCatalogViewComponent },
-  { path: 'products/:id', component: ProductViewComponent }
+  { path: 'products/:id', component: ProductViewComponent },
+  { path: '**', component: NotfoundViewComponent }
+  
 ];
 
 @NgModule({

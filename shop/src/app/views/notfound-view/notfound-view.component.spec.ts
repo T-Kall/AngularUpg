@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductCatalogViewComponent } from './product-catalog-view.component';
+import { NotfoundViewComponent } from './notfound-view.component';
 
-describe('ProductCatalogViewComponent', () => {
-  let component: ProductCatalogViewComponent;
-  let fixture: ComponentFixture<ProductCatalogViewComponent>;
+describe('NotfoundViewComponent', () => {
+  let component: NotfoundViewComponent;
+  let fixture: ComponentFixture<NotfoundViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductCatalogViewComponent ]
+      declarations: [ NotfoundViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductCatalogViewComponent);
+    fixture = TestBed.createComponent(NotfoundViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -19,7 +19,7 @@ export class ProductViewComponent implements OnInit {
 
   constructor(
     private store: Store<IState>,
-    private router: ActivatedRoute,  //hämtar id:t
+    private router: ActivatedRoute, 
     private productService: ProductService, 
     private shoppingCartService: ShoppingCartService
   ) {  }
@@ -42,10 +42,7 @@ export class ProductViewComponent implements OnInit {
     this.shoppingCartService.add(product, quantity)
   }
 
-  removeFromCart(id) {
-    this.shoppingCartService.remove(id)
-  }
-
+ 
   // ngOnDestroy(): void {
   //   this.productService.clear()
   // }

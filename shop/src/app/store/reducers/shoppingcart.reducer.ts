@@ -1,9 +1,14 @@
 import { Actions } from '../actions/shoppingcart.actions'
 import { ActionTypes } from '../actiontypes'
-// import { IProduct } from '../../models/iproduct.model'
 import { IShoppingCart } from 'src/app/models/ishoppingcart.model'
 
 const initialState: Array<IShoppingCart> = [] 
+
+// const initState = {
+//     shoppingcart: [],
+//     totalCartQuantity: 0,
+//     totalCartAmount: 0
+// }
 
 export function ShoppingCartReducer(state = initialState, action: Actions) {
     switch (action.type) {
@@ -23,7 +28,6 @@ export function ShoppingCartReducer(state = initialState, action: Actions) {
                     return item
                 
                let newItem : IShoppingCart = { product: item.product, quantity: item.quantity + 1 }
-                // let newItem = { product: item.product, quantity: item.quantity + 1 }
                 return newItem
             })
 

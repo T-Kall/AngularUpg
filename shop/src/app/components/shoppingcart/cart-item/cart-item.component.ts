@@ -14,15 +14,13 @@ import { IState } from 'src/app/models/istate.model';
 })
 export class CartItemComponent implements OnInit {
 
-  
-  //   public product: IProduct
-  // public shoppingcart: Array<any>
   public shoppingcart: Array<IShoppingCart>
- //public cart$: Observable<Array<IProduct>>
-  //public products$: Observable<any>
 
-  //   public totalCartQuantity: number = 0
-  //   public totalCartAmount: number = 0
+  // public product: IProduct
+  // public shoppingcart: Array<any>
+
+  // public cart$: Observable<Array<IProduct>>
+  // public products$: Observable<any>
 
   constructor(
     private shoppingCartService: ShoppingCartService,
@@ -53,19 +51,14 @@ export class CartItemComponent implements OnInit {
   //   this.store.dispatch(remove({id: id}))
   // }
 
-  increment(item) {
-    
-    this.shoppingCartService.increment(item)
+  increment(product) {
+    this.shoppingCartService.increment(product)
   }
 
-  // increment(item) {
-  //   this.shoppingCartService.increment(item)
-  // }
 
-  decrement(item) {
-    this.shoppingCartService.decrement(item)
+  decrement(product) {
+    this.shoppingCartService.decrement(product)
   }
-
 
 
 }

@@ -12,7 +12,7 @@ export class ShoppingCartService {
 
   constructor(private store: Store<IState>) { }
 
-  //Totala kostnaden
+  //Totala SUMMAN
   totalAmount() {
     this.store.select(store => store.shoppingcart).subscribe(res => this.cart = res)
     let totAmount = 0
@@ -23,17 +23,41 @@ export class ShoppingCartService {
   }
 
 
-  //Totala Antal grejer
+  //Totala ANTAL grejer
   totalQuantity() {
     this.store.select(store => store.shoppingcart).subscribe(res => this.cart = res)
     let totQuantity = 0
     this.cart.forEach(item => {
       totQuantity += item.quantity
     })
+    console.log('test4', totQuantity)
     this.store.dispatch(new ShoppingCartActions.Quantity(totQuantity))
   }
 
 
+  // increment(item) {
+  //   this.store.dispatch(new ShoppingCartActions.Increment(item))
+  //   this.totalQuantity(), this.totalAmount()
+  // }
+
+
+  // shoppingCartTotal(state) {
+  //   let total = 0
+  //   if(state.cart.length !== 0) {
+  //     state.cart.forEach(item => {
+  //       total += item.product.price * item.quantity
+  //     })
+  //   }    
+  //   return total
+  // },
+
+  // shoppingCartItemCount(state) {
+  //   let items = 0
+  //   state.cart.forEach(item => {
+  //     items += item.quantity
+  //   }) 
+  //   return items
+  // },
 
   //   let totQuantity = 0;
   //   for (var i = 0; i < this.cart.length; i++) {
@@ -64,23 +88,26 @@ export class ShoppingCartService {
     this.totalQuantity(), this.totalAmount()
   }
 
+  //ÖKA 
   increment(item) {
     this.store.dispatch(new ShoppingCartActions.Increment(item))
     this.totalQuantity(), this.totalAmount()
   }
 
+  //MINSKA - och om varan mindre än 1 - så ta bort varan
+   decrement(item) {
+    if (item.quantity <= 1) {
+      this.remove(item.product._id)
+    } else {
+      this.store.dispatch(new ShoppingCartActions.Decrement(item))
+      this.totalQuantity(), this.totalAmount()
+    }
 
-  
-
-  //Minska - om varan större? än = 1 ta bort - skriv ut det nya != null <= 1)
-  //Fixar reducern
-  decrement(item) {
-    this.store.dispatch(new ShoppingCartActions.Decrement(item))
-    this.totalQuantity(), this.totalAmount()
+   
   }
 
 
-  //Decfrement
+  //Decrement
   // itemIndex = state.shoppingcart.findIndex(product => product._id === action.id) 
 
   // state.shoppingcart[itemIndex].quantity === 1    

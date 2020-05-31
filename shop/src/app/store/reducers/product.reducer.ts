@@ -8,7 +8,7 @@ export function ProductReducer(state = initialState, action: Actions) {
     switch (action.type) {
         case ActionTypes.PRODUCT_SET:
             console.log('test1:', state)
-            //return state = action.payload 
+           
             return state = action.payload
 
         case ActionTypes.PRODUCT_CLEAR:

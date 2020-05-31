@@ -12,7 +12,7 @@ export function ProductCatalogReducer(state = initialState, action: Actions) {
             return state = action.payload
 
         case ActionTypes.PRODUCTCATALOG_CLEAR :
-            return state = initialState //en tom array här
+            return state = initialState //tom
 
         default: 
             return state

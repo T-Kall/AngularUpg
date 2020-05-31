@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { ActivatedRoute } from '@angular/router';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
 
 import { IState } from '../../models/istate.model';
@@ -12,25 +13,28 @@ import { IState } from '../../models/istate.model';
 })
 export class NavbarComponent implements OnInit {
 
-  // public shoppingcartQuantity: number = 0
+  public shoppingcartQuantity: number = 0
 
   constructor(
+    private shoppingCartService: ShoppingCartService,
+    private router: ActivatedRoute,
     private store: Store<IState>,
-    ShoppingCartService: ShoppingCartService 
-    ) { }
+   ) { }
 
   //sökväg här och på app-routing
   links = [
-    { path: '/' , pathName: 'Home'},
-    { path: '/features' , pathName: 'Features'}, 
-    { path: '/products' , pathName: 'Products'}
+    { path: '/' , pathName: 'Startsida'},
+    { path: '/features' , pathName: 'Nyheter'}, 
+    { path: '/products' , pathName: 'Produkter'}
   ]
 
-  
 
   ngOnInit(): void {
-    // this.store.select(store => store.shoppingcartQuantity).subscribe(res => this.shoppingcartQuantity = res)
+    this.store.select(state => state.shoppingcartQuantity).subscribe(res => this.shoppingcartQuantity = res)
   }
 
+
 }
+
+
 // const totalCartQuantity = useSelector(state => state.cart.totalCartQuantity)
